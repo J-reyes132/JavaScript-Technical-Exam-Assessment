@@ -1,0 +1,20 @@
+{
+  "name": "javascript-technical-test",
+  "version": "1.0.0",
+  "description": "Workspace para multiples problemas con Swagger",
+  "workspaces": [
+    "divisores-api",
+    "otro-proyecto"
+  ],
+  "scripts": {
+    "start:divisores": "cd divisores-api && node app.js",
+    "start:otro": "cd otro-proyecto && node app.js",
+    "start:all": "concurrently \"npm run start:divisores\" \"npm run start:otro\"",
+    "install:all": "npm install"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
+  }
+}
