@@ -1,8 +1,10 @@
 const express = require('express');
+const path = require('path');
+require('dotenv').config({ path: path.join(__dirname, '../.env') });
 const { divisoresSpec, swaggerUi, setupSwagger } = require('../swagger-config');
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.DIVISORES_PORT || process.env.PORT || 3001;
 
 // Middleware
 app.use(express.json());

@@ -9,12 +9,16 @@
   "scripts": {
     "start:divisores": "cd divisores-api && node app.js",
     "start:callcenter": "cd call-center && node app.js",
-    "start:all": "concurrently \"npm run start:divisores\" \"npm run start:callcenter\"",
-    "install:all": "npm install"
+    "start:all": "\"npm run start:divisores\" \"npm run start:callcenter\"",
+    "install:all": "npm install",
+    "db:setup": "cd call-center && npm run db:create && npm run db:migrate && npm run db:seed",
+    "db:migrate": "cd call-center && npm run db:migrate",
+    "db:reset": "cd call-center && npm run db:migrate:undo:all && npm run db:migrate && npm run db:seed"
   },
   "dependencies": {
     "express": "^5.1.0",
     "swagger-jsdoc": "^6.2.8",
-    "swagger-ui-express": "^5.0.1"
+    "swagger-ui-express": "^5.0.1",
+    "dotenv": "^16.3.0"
   }
 }

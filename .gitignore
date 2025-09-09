@@ -1,4 +1,7 @@
 /node_modules
+/call-center/node_modules
+/divisores-api/node_modules
+/logs
 package-lock.json
 .DS_Store
 .vscode
