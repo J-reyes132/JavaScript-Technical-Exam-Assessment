@@ -59,11 +59,14 @@ module.exports = {
     await queryInterface.addIndex('configuracion_validacion', ['fecha_vigencia_fin']);
     
     // Índice único para evitar duplicados por banco y tipo de validación activo
-    await queryInterface.addIndex('configuracion_validacion', 
-      ['id_banco', 'id_tipo_validacion', 'activo'], 
+    await queryInterface.addIndex('configuracion_validacion',
+      ['id_banco', 'id_tipo_validacion'],
       {
         unique: true,
-        name: 'unique_banco_tipo_validacion_activo'
+        name: 'unique_banco_tipo_validacion_activo',
+        where: {
+          activo: true
+        }
       }
     );
   },
