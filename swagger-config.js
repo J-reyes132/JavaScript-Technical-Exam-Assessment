@@ -48,6 +48,15 @@ const divisoresOptions = {
   servers: [{ url: 'http://localhost:3001', description: 'API Divisores Primos' }]
 };
 
+const callCenterOptions = {
+  ...baseOptions,
+  apis: [
+    path.join(__dirname, 'call-center', 'routes', '*.js'),
+    path.join(__dirname, 'call-center', '*.js')
+  ],
+  servers: [{ url: 'http://localhost:3002', description: 'API Validador de configuraciones clientes call center' }]
+};
+
 const otroProyectoOptions = {
   ...baseOptions,
   apis: [path.join(__dirname, 'otro-proyecto', 'routes', '*.js')],
@@ -56,6 +65,7 @@ const otroProyectoOptions = {
 
 // Generar especificaciones
 const divisoresSpec = swaggerJSDoc(divisoresOptions);
+const callCenterSpec = swaggerJSDoc(callCenterOptions);
 const otroProyectoSpec = swaggerJSDoc(otroProyectoOptions);
 
 // Middleware para Swagger UI
@@ -78,6 +88,7 @@ function debugSwaggerConfig() {
 
 module.exports = {
   divisoresSpec,
+  callCenterSpec,
   otroProyectoSpec,
   swaggerUi,
   setupSwagger,
