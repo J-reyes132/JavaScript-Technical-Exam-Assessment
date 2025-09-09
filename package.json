@@ -4,12 +4,12 @@
   "description": "Workspace para multiples problemas con Swagger",
   "workspaces": [
     "divisores-api",
-    "otro-proyecto"
+    "call-center"
   ],
   "scripts": {
     "start:divisores": "cd divisores-api && node app.js",
-    "start:otro": "cd otro-proyecto && node app.js",
-    "start:all": "concurrently \"npm run start:divisores\" \"npm run start:otro\"",
+    "start:callcenter": "cd call-center && node app.js",
+    "start:all": "concurrently \"npm run start:divisores\" \"npm run start:callcenter\"",
     "install:all": "npm install"
   },
   "dependencies": {

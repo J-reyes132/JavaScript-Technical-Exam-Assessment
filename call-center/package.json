@@ -1,0 +1,9 @@
+{
+  "name": "call-center-api",
+  "version": "1.0.0",
+  "description": "API para gestión de configuraciones de clientes en un call center",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  }
+}
