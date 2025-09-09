@@ -1,8 +1,10 @@
 const express = require('express');
+const path = require('path');
+require('dotenv').config({ path: path.join(__dirname, '../.env') });
 const { swaggerUi, setupSwagger, callCenterSpec } = require('../swagger-config');
 
 const app = express();
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.CALL_CENTER_PORT || process.env.PORT || 3002;
 
 // Middleware
 app.use(express.json());
